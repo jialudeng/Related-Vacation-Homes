@@ -1,0 +1,36 @@
+{
+  "name": "recommendations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "react-dev": "webpack -d --watch",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Draftbnb/recommendations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Draftbnb/recommendations/issues"
+  },
+  "homepage": "https://github.com/Draftbnb/recommendations#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.8.9",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "nodemon": "^2.0.2",
+    "webpack": "^2.2.1"
+  }
+}
