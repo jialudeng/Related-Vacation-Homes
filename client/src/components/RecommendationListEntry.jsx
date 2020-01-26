@@ -15,7 +15,6 @@ class RecommendationListEntry extends React.Component {
             </div>
         )
     }
-
 }
 
 export default RecommendationListEntry;
