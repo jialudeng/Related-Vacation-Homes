@@ -24,7 +24,6 @@ class App extends React.Component {
     //             console.log(error);
     //         })
     // }
-
     render() {
         return (
             <div id="main-content">
