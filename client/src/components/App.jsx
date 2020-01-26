@@ -7,10 +7,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            listings: dummyData
+            listings: dummyData // currently, working off of dummy data already in the client
         }
     }
-    // Need to know how to send a get request for a specific listing so when type localhost:3003/listing/3, send a get request for the listing with a listingId of 3 
+    // Need to send a get request for a specific listing so when type localhost:3003/listing/1, send a get request for the listing with listingId of 1 
     // componentDidMount() {
     //     axios.get('./listings')
     //         .then((response) => {
