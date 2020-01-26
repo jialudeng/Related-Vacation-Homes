@@ -1,0 +1,16 @@
+#heading {
+    font-size: 24px !important;
+    line-height: 30px !important;
+    letter-spacing: normal !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    color: #484848 !important;
+}
+
+.img {
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 330px;
+    height: 220px;
+    background-size: cover;
+}
