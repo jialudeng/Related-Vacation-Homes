@@ -1,6 +1,6 @@
 import React from 'react';
 // import axios from 'axios';
-import RecommendationList from './RecommendationList.jsx';
+import PhotoCarouselList from './PhotoCarouselList.jsx';
 import dummyData from '../../dummyData.js';
 
 class App extends React.Component {
@@ -27,7 +27,7 @@ class App extends React.Component {
     render() {
         return (
             <div id="main-content">
-                <RecommendationList recommendations={this.state.listings[0].recommendations}/>
+                <PhotoCarouselList recommendations={this.state.listings[0].recommendations}/>
             </div>
         )
     }
