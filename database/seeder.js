@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost/recommendations')
             recommendationId: i,
             title: faker.lorem.sentence(),
             pricePerNight: (Math.random() * 500 + 60).toFixed(2),
-            images: imageUrls.sort(() => 0.5 - Math.random()).slice(0, 5), // shuffle imageUrls array and then get sub-array of first 5 elements after shuffled
+            images: imageUrls.sort(() => 0.5 - Math.random()).slice(0, Math.random() * 5 + 5), // shuffle imageUrls array and then get sub-array of first 5-10 elements after shuffled
             typeOfListing: ['Entire place', 'Private room', 'Shared room'][Math.floor(Math.random() * 3)],
             numOfBeds: Math.floor(Math.random() * 4) + 1,
             numOfStars: Math.floor(Math.random() * 5),

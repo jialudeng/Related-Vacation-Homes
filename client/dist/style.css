@@ -6,11 +6,13 @@
     color: #484848 !important;
 }
 
-.img {
+.slide-arrow {
+}
+
+.left {
     float: left;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    width: 330px;
-    height: 220px;
-    background-size: cover;
+}
+
+.right {
+    float: right;
 }

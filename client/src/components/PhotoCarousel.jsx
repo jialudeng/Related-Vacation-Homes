@@ -1,5 +1,4 @@
 import React from 'react';
-import Arrow from './Arrow.jsx';
 import ImageSlide from './ImageSlide.jsx';
 
 class PhotoCarousel extends React.Component {
@@ -34,24 +33,13 @@ class PhotoCarousel extends React.Component {
     }
 
     render() {
-        // const styles = {
-        //     backgroundImage: 'url(' + this.state.images[this.state.currentImageIndex] + ')',
-        //     // backgroundSize: 'cover',
-        //     // backgroundPosition: 'center'
-        //     float: "left",
-        //     marginLeft: "10px",
-        //     marginBottom: "10px",
-        //     width: "330px",
-        //     height: "220px",
-        //     backgroundSize: "cover"
-        // }
+
         return (
             <div className="carousel">
                 <ImageSlide 
                     image={this.state.images[this.state.currentImageIndex]} 
                     previousSlide={this.previousSlide} 
                     nextSlide={this.nextSlide}/>
-                {/*<img src={this.state.images[this.state.currentImageIndex]} className="img" alt="..."/>*/}
             </div>
         )
     }
