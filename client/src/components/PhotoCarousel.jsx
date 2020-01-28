@@ -35,14 +35,12 @@ class PhotoCarousel extends React.Component {
     }
 
     handleToggleButton() {
-        console.log("buttons will be toggled");
         this.setState(prevState => ({
             showButtons: !prevState.showButtons
         }));
     }
 
     render() {
-
         return (
             <div className="carousel">
                 <ImageSlide

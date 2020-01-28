@@ -20,13 +20,15 @@ const ImageSlide = ({image, previousSlide, nextSlide, handleToggleButton, showBu
         backgroundSize: 'cover',
         borderRadius: "5px",
         float: "left",
-        marginLeft: "10px",
-        marginBottom: "10px",
+        margin: "10px 10px",
         width: "330px",
         height: "220px",
     }
     return (
-        <div style={ImageStyles} onMouseEnter={handleToggleButton} onMouseLeave={handleToggleButton}>
+        <div style={ImageStyles} 
+            onMouseEnter={handleToggleButton} 
+            onMouseLeave={handleToggleButton} >
+
             <ArrowButton 
                 showButtons={showButtons}
                 direction="left"

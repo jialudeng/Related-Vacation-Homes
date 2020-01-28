@@ -28,23 +28,34 @@ const ListingSchema = new Schema({
 // Compile schema into a model, which is a class with which we construct documents
 const Listing = mongoose.model('Listing', ListingSchema);
 
-// const getListings = (callback) => {
-//     Listing.find((error, listings) => {
-//         if (error) {
-//             console.log(error);
-//             callback(error);
-//         } else {
-//             console.log(listings);
-//             callback(null, listings);
-//         }
-//     });
-// }
+const getAllListings = (callback) => {
+    Listing.find((error, listingsArr) => {
+        if (error) {
+            console.log(error);
+            callback(error);
+        } else {
+            console.log(listingsArr);
+            callback(null, listingsArr);
+        }
+    })
+}
+
+const getListing = (id, callback) => {
+    Listing.find({listingId: id}, "recommendations", (error, listingObject) => {
+        if (error) {
+            console.log(error);
+            callback(error);
+        } else {
+            console.log(listingObject);
+            callback(null, listingObject);
+        }
+    });
+}
 
 // to test function getListings()
-// getListings(() => {})
+// getListing(8, () => {})
 
-module.exports = {Listing};
-// module.exports = {getListings};
+module.exports = {Listing, getListing, getAllListings};
 
 
 

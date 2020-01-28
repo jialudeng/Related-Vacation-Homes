@@ -1,226 +1,257 @@
 const dummyData = [
     {
-        "listingId" : 15,
+        "listingId" : 28,
         "recommendations" : [
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo10",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo18",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo13",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1"
-                ],
-                "recommendationId" : 0,
-                "title" : "Sint cupiditate laudantium qui sit ut vitae architecto veniam dolores.",
-                "pricePerNight" : "393.70",
-                "typeOfListing" : "Shared room",
-                "numOfBeds" : 3,
-                "numOfStars" : 4,
-                "numOfReviews" : 90,
-                "likedStatus" : false,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo18",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo5",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo27",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo30"
-                ],
-                "recommendationId" : 1,
-                "title" : "Modi dolorem tempora illum est temporibus aut mollitia.",
-                "pricePerNight" : "128.69",
-                "typeOfListing" : "Private room",
-                "numOfBeds" : 2,
-                "numOfStars" : 0,
-                "numOfReviews" : 45,
-                "likedStatus" : false,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo31",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo26",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo19",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo34",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo32"
-                ],
-                "recommendationId" : 2,
-                "title" : "Doloremque facilis quo beatae sit qui nam facere nihil in.",
-                "pricePerNight" : "165.88",
-                "typeOfListing" : "Entire place",
-                "numOfBeds" : 3,
-                "numOfStars" : 0,
-                "numOfReviews" : 59,
-                "likedStatus" : true,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo33",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo15",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo11",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo26",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo36"
-                ],
-                "recommendationId" : 3,
-                "title" : "Amet est cupiditate aut optio neque rerum quo molestias nihil.",
-                "pricePerNight" : "438.06",
-                "typeOfListing" : "Private room",
-                "numOfBeds" : 1,
-                "numOfStars" : 0,
-                "numOfReviews" : 15,
-                "likedStatus" : true,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo26",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo6",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo34",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo8"
-                ],
-                "recommendationId" : 4,
-                "title" : "Debitis voluptates aut dolores distinctio consequuntur rerum dolor fugiat harum.",
-                "pricePerNight" : "252.18",
-                "typeOfListing" : "Shared room",
-                "numOfBeds" : 2,
-                "numOfStars" : 1,
-                "numOfReviews" : 70,
-                "likedStatus" : true,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo39",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo8",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo26",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo17",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo20"
-                ],
-                "recommendationId" : 5,
-                "title" : "Veritatis voluptate quia est in aut sed.",
-                "pricePerNight" : "438.91",
-                "typeOfListing" : "Shared room",
-                "numOfBeds" : 4,
-                "numOfStars" : 2,
-                "numOfReviews" : 84,
-                "likedStatus" : false,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo33",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo25",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo27"
-                ],
-                "recommendationId" : 6,
-                "title" : "Eum aut aut ut.",
-                "pricePerNight" : "206.65",
-                "typeOfListing" : "Shared room",
-                "numOfBeds" : 4,
-                "numOfStars" : 2,
-                "numOfReviews" : 100,
-                "likedStatus" : true,
-                "plusStatus" : false
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo17",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo18",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo13",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo15"
-                ],
-                "recommendationId" : 7,
-                "title" : "Rerum aut aliquam sunt accusamus dignissimos molestias quod est.",
-                "pricePerNight" : "246.82",
-                "typeOfListing" : "Entire place",
-                "numOfBeds" : 4,
-                "numOfStars" : 1,
-                "numOfReviews" : 52,
-                "likedStatus" : true,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo5",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo13",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo16",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2"
-                ],
-                "recommendationId" : 8,
-                "title" : "Ut similique qui hic quo facere occaecati repellat.",
-                "pricePerNight" : "139.36",
-                "typeOfListing" : "Private room",
-                "numOfBeds" : 4,
-                "numOfStars" : 2,
-                "numOfReviews" : 82,
-                "likedStatus" : false,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo34",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo23",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo13",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo10"
-                ],
-                "recommendationId" : 9,
-                "title" : "Eveniet culpa quia a.",
-                "pricePerNight" : "241.80",
-                "typeOfListing" : "Shared room",
-                "numOfBeds" : 3,
-                "numOfStars" : 4,
-                "numOfReviews" : 80,
-                "likedStatus" : true,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo34",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo30",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo20",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo28",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12"
-                ],
-                "recommendationId" : 10,
-                "title" : "Fuga eos sit qui dolores reiciendis voluptas aut et maiores.",
-                "pricePerNight" : "486.96",
-                "typeOfListing" : "Entire place",
-                "numOfBeds" : 2,
-                "numOfStars" : 3,
-                "numOfReviews" : 51,
-                "likedStatus" : true,
-                "plusStatus" : true
-            },
-            {
-                "images" : [
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo35",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo18",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo7",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo11",
-                    "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo16"
-                ],
-                "recommendationId" : 11,
-                "title" : "Velit et voluptatum reiciendis porro quae reiciendis natus deleniti voluptatem.",
-                "pricePerNight" : "111.00",
-                "typeOfListing" : "Private room",
-                "numOfBeds" : 4,
-                "numOfStars" : 4,
-                "numOfReviews" : 19,
-                "likedStatus" : false,
-                "plusStatus" : true
-            }
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo27",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo25",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo36",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo29",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo4",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo17",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo34"
+                        ],
+                        "recommendationId" : 0,
+                        "title" : "Velit dignissimos neque volupt",
+                        "pricePerNight" : "81.10",
+                        "typeOfListing" : "Shared room",
+                        "numOfBeds" : 3,
+                        "numOfStars" : 0,
+                        "numOfReviews" : 38,
+                        "likedStatus" : false,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo34",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo25",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo33",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo39",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo11",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo7",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo18",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo30"
+                        ],
+                        "recommendationId" : 1,
+                        "title" : "Fuga dolorem quia.",
+                        "pricePerNight" : "353.83",
+                        "typeOfListing" : "Private room",
+                        "numOfBeds" : 3,
+                        "numOfStars" : 1,
+                        "numOfReviews" : 59,
+                        "likedStatus" : false,
+                        "plusStatus" : false
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo25",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo36",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo7",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo4",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo29",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo10"
+                        ],
+                        "recommendationId" : 2,
+                        "title" : "Exercitationem est quis evenie",
+                        "pricePerNight" : "148.32",
+                        "typeOfListing" : "Shared room",
+                        "numOfBeds" : 3,
+                        "numOfStars" : 2,
+                        "numOfReviews" : 1,
+                        "likedStatus" : false,
+                        "plusStatus" : false
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo21",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo32",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo19",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo15",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo28"
+                        ],
+                        "recommendationId" : 3,
+                        "title" : "Error perspiciatis autem molli",
+                        "pricePerNight" : "516.16",
+                        "typeOfListing" : "Private room",
+                        "numOfBeds" : 4,
+                        "numOfStars" : 4,
+                        "numOfReviews" : 4,
+                        "likedStatus" : false,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo10",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo14",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo6",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo8",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo18",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo33"
+                        ],
+                        "recommendationId" : 4,
+                        "title" : "Officia asperiores et reiciend",
+                        "pricePerNight" : "204.62",
+                        "typeOfListing" : "Private room",
+                        "numOfBeds" : 1,
+                        "numOfStars" : 2,
+                        "numOfReviews" : 40,
+                        "likedStatus" : false,
+                        "plusStatus" : false
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo12",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo38",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo19",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo21",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo9",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo4",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo28",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo10",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo30"
+                        ],
+                        "recommendationId" : 5,
+                        "title" : "Et expedita sed cumque consequ",
+                        "pricePerNight" : "308.71",
+                        "typeOfListing" : "Entire place",
+                        "numOfBeds" : 3,
+                        "numOfStars" : 3,
+                        "numOfReviews" : 79,
+                        "likedStatus" : false,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo30",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo21",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo39",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo23",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo27",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo26",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3"
+                        ],
+                        "recommendationId" : 6,
+                        "title" : "Nihil est exercitationem aut c",
+                        "pricePerNight" : "527.02",
+                        "typeOfListing" : "Entire place",
+                        "numOfBeds" : 2,
+                        "numOfStars" : 4,
+                        "numOfReviews" : 31,
+                        "likedStatus" : true,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo22",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo30",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo21",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo36",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo40",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo7",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo16",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo8",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo19"
+                        ],
+                        "recommendationId" : 7,
+                        "title" : "Nulla culpa eos magni quas aut",
+                        "pricePerNight" : "480.12",
+                        "typeOfListing" : "Shared room",
+                        "numOfBeds" : 3,
+                        "numOfStars" : 2,
+                        "numOfReviews" : 57,
+                        "likedStatus" : true,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo31",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo25",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo22",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo7",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo23",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo24",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo30",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo29"
+                        ],
+                        "recommendationId" : 8,
+                        "title" : "Veritatis autem alias labore e",
+                        "pricePerNight" : "442.65",
+                        "typeOfListing" : "Entire place",
+                        "numOfBeds" : 2,
+                        "numOfStars" : 2,
+                        "numOfReviews" : 26,
+                        "likedStatus" : true,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo9",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo31",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo7",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo40",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo23",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo20",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo36",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo8"
+                        ],
+                        "recommendationId" : 9,
+                        "title" : "Ipsam inventore consequuntur e",
+                        "pricePerNight" : "60.90",
+                        "typeOfListing" : "Private room",
+                        "numOfBeds" : 1,
+                        "numOfStars" : 3,
+                        "numOfReviews" : 38,
+                        "likedStatus" : true,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo23",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo36",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo14",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo20",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo32",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo10"
+                        ],
+                        "recommendationId" : 10,
+                        "title" : "Sit culpa quisquam cupiditate ",
+                        "pricePerNight" : "459.35",
+                        "typeOfListing" : "Private room",
+                        "numOfBeds" : 2,
+                        "numOfStars" : 4,
+                        "numOfReviews" : 51,
+                        "likedStatus" : false,
+                        "plusStatus" : true
+                },
+                {
+                        "images" : [
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo11",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo23",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo36",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo18",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo29",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo28",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo17",
+                              "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo25"
+                        ],
+                        "recommendationId" : 11,
+                        "title" : "Nobis nemo beatae ut est a non",
+                        "pricePerNight" : "427.15",
+                        "typeOfListing" : "Entire place",
+                        "numOfBeds" : 2,
+                        "numOfStars" : 3,
+                        "numOfReviews" : 32,
+                        "likedStatus" : true,
+                        "plusStatus" : true
+                }
         ],
         "__v" : 0
-    }
+}
 ]
 
 export default dummyData;
