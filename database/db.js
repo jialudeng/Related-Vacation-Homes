@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const mongoDB = 'mongodb://localhost/recommendations';
+const mongoDB = 'mongodb://localhost/listings';
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }); 
 const db = mongoose.connection; // Get default connection
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
