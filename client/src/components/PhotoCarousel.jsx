@@ -6,10 +6,12 @@ class PhotoCarousel extends React.Component {
         super(props);
         this.state = {
             images: props.recommendation.images,
-            currentImageIndex: 0
+            currentImageIndex: 0, 
+            showButtons: false
         }
         this.previousSlide = this.previousSlide.bind(this);
         this.nextSlide = this.nextSlide.bind(this);
+        this.handleToggleButton = this.handleToggleButton.bind(this);
     }
 
     previousSlide() {
@@ -32,14 +34,24 @@ class PhotoCarousel extends React.Component {
         }) 
     }
 
+    handleToggleButton() {
+        console.log("buttons will be toggled");
+        this.setState(prevState => ({
+            showButtons: !prevState.showButtons
+        }));
+    }
+
     render() {
 
         return (
             <div className="carousel">
-                <ImageSlide 
+                <ImageSlide
                     image={this.state.images[this.state.currentImageIndex]} 
                     previousSlide={this.previousSlide} 
-                    nextSlide={this.nextSlide}/>
+                    nextSlide={this.nextSlide}
+                    handleToggleButton={this.handleToggleButton}
+                    showButtons={this.state.showButtons}
+                />
             </div>
         )
     }

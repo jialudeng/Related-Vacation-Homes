@@ -14,7 +14,7 @@ import ArrowButton from './ArrowButton.jsx';
 //     height: 220px;
 //     `;
 
-const ImageSlide = ({image, previousSlide, nextSlide}) => {
+const ImageSlide = ({image, previousSlide, nextSlide, handleToggleButton, showButtons}) => {
     const ImageStyles = {
         backgroundImage: 'url(' + image + ')',
         backgroundSize: 'cover',
@@ -26,13 +26,15 @@ const ImageSlide = ({image, previousSlide, nextSlide}) => {
         height: "220px",
     }
     return (
-        <div style={ImageStyles}>
-            <ArrowButton
+        <div style={ImageStyles} onMouseEnter={handleToggleButton} onMouseLeave={handleToggleButton}>
+            <ArrowButton 
+                showButtons={showButtons}
                 direction="left"
                 clickFunction={previousSlide}
                 graphic="<"
             />
             <ArrowButton 
+                showButtons={showButtons}
                 direction="right"
                 clickFunction={nextSlide}
                 graphic=">"
