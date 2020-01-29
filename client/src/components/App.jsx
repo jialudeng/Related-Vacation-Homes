@@ -43,6 +43,7 @@ class App extends React.Component {
     render() {
         return (
             <div id="main-content">
+                <h1 id="heading"> More homes you may like </h1>
                 <PhotoCarouselList recommendations={this.state.recommendations}/>
             </div>
         )

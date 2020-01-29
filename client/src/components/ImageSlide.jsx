@@ -1,6 +1,6 @@
 import React from 'react';
-// import styled from 'styled-components';
 import ArrowButton from './ArrowButton.jsx';
+// import styled from 'styled-components';
 
 // attempt in using 'styled-components' but backgroundImages won't render
 // const ImageContainer = styled.div`
@@ -14,7 +14,7 @@ import ArrowButton from './ArrowButton.jsx';
 //     height: 220px;
 //     `;
 
-const ImageSlide = ({image, previousSlide, nextSlide, handleToggleButton, showButtons}) => {
+const ImageSlide = ({image, handleToggleButton, nextSlide, previousSlide, showButtons}) => {
     const ImageStyles = {
         backgroundImage: 'url(' + image + ')',
         backgroundSize: 'cover',
@@ -35,6 +35,9 @@ const ImageSlide = ({image, previousSlide, nextSlide, handleToggleButton, showBu
                 clickFunction={previousSlide}
                 graphic="<"
             />
+
+            {/*<img src={image} alt="image" height="220px" width="330px"/>*/}
+
             <ArrowButton 
                 showButtons={showButtons}
                 direction="right"

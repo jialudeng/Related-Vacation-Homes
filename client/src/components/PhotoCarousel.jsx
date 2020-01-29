@@ -45,9 +45,9 @@ class PhotoCarousel extends React.Component {
             <div className="carousel">
                 <ImageSlide
                     image={this.state.images[this.state.currentImageIndex]} 
-                    previousSlide={this.previousSlide} 
-                    nextSlide={this.nextSlide}
                     handleToggleButton={this.handleToggleButton}
+                    nextSlide={this.nextSlide}
+                    previousSlide={this.previousSlide}
                     showButtons={this.state.showButtons}
                 />
             </div>
