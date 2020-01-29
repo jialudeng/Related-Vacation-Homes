@@ -33,7 +33,6 @@ const ImageSlide = ({image, handleToggleButton, nextSlide, previousSlide, showBu
                 showButtons={showButtons}
                 direction="left"
                 clickFunction={previousSlide}
-                graphic="<"
             />
 
             {/*<img src={image} alt="image" height="220px" width="330px"/>*/}
@@ -42,7 +41,6 @@ const ImageSlide = ({image, handleToggleButton, nextSlide, previousSlide, showBu
                 showButtons={showButtons}
                 direction="right"
                 clickFunction={nextSlide}
-                graphic=">"
             />
         </div>
     );

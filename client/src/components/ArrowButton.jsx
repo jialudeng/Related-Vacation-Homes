@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+
 const Button = styled.a`
     opacity: ${props => props.showButtons ? "0.8" : "0"};
     background-color: white;
@@ -10,10 +12,28 @@ const Button = styled.a`
     float: ${props => props.direction === "left" ? "left" : "right"};
 `;
 
-const ArrowButton = ({direction, clickFunction, graphic, showButtons}) => {
+const RightArrowIcon = styled.i`
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+`;
+
+const LeftArrowIcon = styled.i`
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+`;
+
+const ArrowButton = ({direction, clickFunction, showButtons}) => {
     return (
-        <Button onClick={clickFunction} direction={direction} showButtons={showButtons}> 
-            {graphic}
+        <Button onClick={clickFunction} direction={direction} showButtons={showButtons}>
+            {direction === "left" ? <LeftArrowIcon/> : <RightArrowIcon/>}
         </Button>
     )
 }

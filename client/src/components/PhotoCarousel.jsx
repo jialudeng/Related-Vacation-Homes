@@ -5,7 +5,6 @@ class PhotoCarousel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            images: props.recommendation.images,
             currentImageIndex: 0, 
             showButtons: false
         }
@@ -44,7 +43,7 @@ class PhotoCarousel extends React.Component {
         return (
             <div className="carousel">
                 <ImageSlide
-                    image={this.state.images[this.state.currentImageIndex]} 
+                    image={this.props.recommendation.images[this.state.currentImageIndex]} 
                     handleToggleButton={this.handleToggleButton}
                     nextSlide={this.nextSlide}
                     previousSlide={this.previousSlide}
