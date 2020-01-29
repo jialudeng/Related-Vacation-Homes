@@ -1,7 +1,25 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import PhotoCarouselList from './PhotoCarouselList.jsx';
 import dummyData from '../../dummyData.js';
+
+const AppContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+`;
+
+const Heading = styled.div`
+    font-size: 24px !important;
+    line-height: 30px !important;
+    letter-spacing: normal !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    color: #484848 !important;
+    margin-left: 60px;
+    display: block;
+    font-weight: bold;
+`;
 
 class App extends React.Component {
     constructor(props) {
@@ -42,10 +60,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <div id="main-content">
-                <h1 id="heading"> More homes you may like </h1>
+            <AppContainer id="main-content">
+                <Heading> More homes you may like </Heading>
                 <PhotoCarouselList recommendations={this.state.recommendations}/>
-            </div>
+            </AppContainer>
         )
     }
 }

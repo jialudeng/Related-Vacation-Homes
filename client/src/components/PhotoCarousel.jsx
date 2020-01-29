@@ -14,7 +14,7 @@ class PhotoCarousel extends React.Component {
     }
 
     previousSlide() {
-        const lastIndex = this.state.images.length - 1;
+        const lastIndex = this.props.recommendation.images.length - 1;
         const {currentImageIndex} = this.state;
         const shouldResetIndex = currentImageIndex === 0;
         const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
@@ -24,7 +24,7 @@ class PhotoCarousel extends React.Component {
     }
 
     nextSlide() {
-        const lastIndex = this.state.images.length - 1;
+        const lastIndex = this.props.recommendation.images.length - 1;
         const {currentImageIndex} = this.state;
         const shouldResetIndex = currentImageIndex === lastIndex;
         const index = shouldResetIndex ? 0 : currentImageIndex + 1;

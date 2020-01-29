@@ -18,7 +18,7 @@ const dummyData = [
                         "pricePerNight" : "81.10",
                         "typeOfListing" : "Shared room",
                         "numOfBeds" : 3,
-                        "numOfStars" : 0,
+                        "numOfStars" : 4.50,
                         "numOfReviews" : 38,
                         "likedStatus" : false,
                         "plusStatus" : true
@@ -40,7 +40,7 @@ const dummyData = [
                         "pricePerNight" : "353.83",
                         "typeOfListing" : "Private room",
                         "numOfBeds" : 3,
-                        "numOfStars" : 1,
+                        "numOfStars" : 1.60,
                         "numOfReviews" : 59,
                         "likedStatus" : false,
                         "plusStatus" : false
@@ -60,7 +60,7 @@ const dummyData = [
                         "pricePerNight" : "148.32",
                         "typeOfListing" : "Shared room",
                         "numOfBeds" : 3,
-                        "numOfStars" : 2,
+                        "numOfStars" : 2.73,
                         "numOfReviews" : 1,
                         "likedStatus" : false,
                         "plusStatus" : false
@@ -78,7 +78,7 @@ const dummyData = [
                         "pricePerNight" : "516.16",
                         "typeOfListing" : "Private room",
                         "numOfBeds" : 4,
-                        "numOfStars" : 4,
+                        "numOfStars" : 4.70,
                         "numOfReviews" : 4,
                         "likedStatus" : false,
                         "plusStatus" : true
@@ -98,7 +98,7 @@ const dummyData = [
                         "pricePerNight" : "204.62",
                         "typeOfListing" : "Private room",
                         "numOfBeds" : 1,
-                        "numOfStars" : 2,
+                        "numOfStars" : 2.67,
                         "numOfReviews" : 40,
                         "likedStatus" : false,
                         "plusStatus" : false
@@ -120,10 +120,10 @@ const dummyData = [
                         "pricePerNight" : "308.71",
                         "typeOfListing" : "Entire place",
                         "numOfBeds" : 3,
-                        "numOfStars" : 3,
+                        "numOfStars" : 3.89,
                         "numOfReviews" : 79,
                         "likedStatus" : false,
-                        "plusStatus" : true
+                        "plusStatus" : false
                 },
                 {
                         "images" : [
@@ -140,7 +140,7 @@ const dummyData = [
                         "pricePerNight" : "527.02",
                         "typeOfListing" : "Entire place",
                         "numOfBeds" : 2,
-                        "numOfStars" : 4,
+                        "numOfStars" : 4.52,
                         "numOfReviews" : 31,
                         "likedStatus" : true,
                         "plusStatus" : true
@@ -162,7 +162,7 @@ const dummyData = [
                         "pricePerNight" : "480.12",
                         "typeOfListing" : "Shared room",
                         "numOfBeds" : 3,
-                        "numOfStars" : 2,
+                        "numOfStars" : 2.45,
                         "numOfReviews" : 57,
                         "likedStatus" : true,
                         "plusStatus" : true
@@ -183,10 +183,10 @@ const dummyData = [
                         "pricePerNight" : "442.65",
                         "typeOfListing" : "Entire place",
                         "numOfBeds" : 2,
-                        "numOfStars" : 2,
+                        "numOfStars" : 3.96,
                         "numOfReviews" : 26,
                         "likedStatus" : true,
-                        "plusStatus" : true
+                        "plusStatus" : false
                 },
                 {
                         "images" : [
@@ -204,10 +204,10 @@ const dummyData = [
                         "pricePerNight" : "60.90",
                         "typeOfListing" : "Private room",
                         "numOfBeds" : 1,
-                        "numOfStars" : 3,
+                        "numOfStars" : 4.95,
                         "numOfReviews" : 38,
                         "likedStatus" : true,
-                        "plusStatus" : true
+                        "plusStatus" : false
                 },
                 {
                         "images" : [
@@ -223,7 +223,7 @@ const dummyData = [
                         "pricePerNight" : "459.35",
                         "typeOfListing" : "Private room",
                         "numOfBeds" : 2,
-                        "numOfStars" : 4,
+                        "numOfStars" : 4.35,
                         "numOfReviews" : 51,
                         "likedStatus" : false,
                         "plusStatus" : true
@@ -244,7 +244,7 @@ const dummyData = [
                         "pricePerNight" : "427.15",
                         "typeOfListing" : "Entire place",
                         "numOfBeds" : 2,
-                        "numOfStars" : 3,
+                        "numOfStars" : 3.61,
                         "numOfReviews" : 32,
                         "likedStatus" : true,
                         "plusStatus" : true

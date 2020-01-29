@@ -30,7 +30,7 @@ class PhotoCarouselList extends React.Component {
     }
     previousList() {
         this.setState( prevState => ({
-            showLeftArrow: prevState.currentLastIndex - 1 !== 0,
+            showLeftArrow: prevState.currentFirstIndex - 1 !== 0,
             currentRecommendations: this.props.recommendations.slice(prevState.currentFirstIndex - 1, prevState.currentLastIndex - 1),
             currentFirstIndex: prevState.currentFirstIndex - 1,
             currentLastIndex: prevState.currentLastIndex - 1

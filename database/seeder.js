@@ -21,7 +21,7 @@ for (var i = 0; i < 12; i++) {
         images: imageUrls.sort(() => 0.5 - Math.random()).slice(0, Math.random() * 5 + 5), // shuffle imageUrls array and then get sub-array of first 5-10 elements after shuffled
         typeOfListing: ['Entire place', 'Private room', 'Shared room'][Math.floor(Math.random() * 3)],
         numOfBeds: Math.floor(Math.random() * 4) + 1,
-        numOfStars: Math.floor(Math.random() * 5),
+        numOfStars: (Math.random() * 4.9 + 0.1).toFixed(2),
         numOfReviews: Math.floor(Math.random() * 100) + 1,
         likedStatus: Math.random() >= 0.5,
         plusStatus: Math.random() >= 0.2

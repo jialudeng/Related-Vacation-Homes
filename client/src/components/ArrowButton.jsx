@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-
 const Button = styled.a`
     opacity: ${props => props.showButtons ? "0.8" : "0"};
     background-color: white;
@@ -11,6 +9,11 @@ const Button = styled.a`
     margin: 100px 10px;
     float: ${props => props.direction === "left" ? "left" : "right"};
 `;
+
+// const OuterButton = styled.a`
+//     display: ${props => props.showButtons ? "Block" : "None"};
+//     opacity: "1"
+// `;
 
 const RightArrowIcon = styled.i`
     transform: rotate(-45deg);
