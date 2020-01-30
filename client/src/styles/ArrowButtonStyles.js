@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 
 export const Button = styled.a`
+    float: ${props => props.direction === "left" ? "left" : "right"};
     background-color: white;
-    position: absolute;
-    height: 18px;
-    width: 10px;
-    left: ${props => props.direction === "left" ? "5px" : "315"};
-    right: ${props => props.direction === "left" ? "0px" : "5px"};
+    height: 16px;
+    width: 8px;
     border-radius: 50%; 
     padding: 7px 12px;
     margin: 100px 10px;
-    opacity: 0.8;
     display: ${props => props.showButtons ? "block" : "none"};
+    opacity: 0.8;
+    transition: transform 300ms ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
 `;
-// float: ${props => props.direction === "left" ? "left" : "right"};
+// opacity: ${props => props.showButtons ? "0.8" : "0"};
+// left: ${props => props.direction === "left" ? "5px" : "315"};
+// right: ${props => props.direction === "left" ? "0px" : "5px"};
 
 export const RightArrowIcon = styled.i`
     transform: rotate(-45deg);

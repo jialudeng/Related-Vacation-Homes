@@ -12,7 +12,7 @@ export const Heading = styled.div`
     letter-spacing: normal !important;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     color: #484848 !important;
-    margin-left: 15px;
+    margin-left: 150px;
     display: block;
     font-weight: bold;
 `;

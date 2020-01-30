@@ -12,6 +12,7 @@ const ItemInformation = ({recommendation}) => {
                     <Type> {recommendation.typeOfListing} · {`${recommendation.numOfBeds} beds `}</Type>
                 </LeftFloat>
                 <RightFloat>
+                    <img src='https://airbnb-recommendation-photos.s3-us-west-1.amazonaws.com/red-star.png' alt="star" height="10" width="12"/>
                     <StarsNum>{`${recommendation.numOfStars}`}</StarsNum> 
                     <ReviewsNum>{`(${recommendation.numOfReviews})`}</ReviewsNum>
                 </RightFloat>
