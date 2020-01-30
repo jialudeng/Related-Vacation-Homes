@@ -1,19 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+
+import {RecommendationListContainer, RecommendationContainer} from '../styles/PhotoCarouselListStyles.js';
 
 import PhotoCarousel from './PhotoCarousel.jsx';
 import ItemInformation from './ItemInformation.jsx';
 import ArrowButton from './ArrowButton.jsx';
-
-const RecommendationListContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-
-const RecommendationContainer = styled.div`
-    display: flex;
-    flex-direction: column; 
-`;
 
 class PhotoCarouselList extends React.Component {
     constructor(props) {
@@ -49,14 +40,14 @@ class PhotoCarouselList extends React.Component {
     render() {
         return (
             <RecommendationListContainer>
-                <ArrowButton direction="left" clickFunction={this.previousList} graphic="<" showButtons={this.state.showLeftArrow}/>
+                <ArrowButton direction="left" clickFunction={this.previousList} showButtons={this.state.showLeftArrow}/>
                 {this.state.currentRecommendations.map( (recommendation, i) => 
                     <RecommendationContainer key={i}>
                         <PhotoCarousel recommendation={recommendation}/> 
                         <ItemInformation recommendation={recommendation}/> 
                     </RecommendationContainer>
                 )}
-                <ArrowButton direction="right" clickFunction={this.nextList} graphic=">" showButtons={this.state.showRightArrow}/>
+                <ArrowButton direction="right" clickFunction={this.nextList} showButtons={this.state.showRightArrow}/>
             </RecommendationListContainer>
         )
     }

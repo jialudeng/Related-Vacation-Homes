@@ -33,6 +33,10 @@ class PhotoCarousel extends React.Component {
         }) 
     }
 
+    // handleLike() {
+    //     console.log('heart should change to red, button size/opacity should increase, and button should show')
+    // }
+
     handleToggleButton() {
         this.setState(prevState => ({
             showButtons: !prevState.showButtons
