@@ -12,6 +12,7 @@ class PhotoCarouselList extends React.Component {
         this.state = {
             currentRecommendations: this.props.recommendations.slice(0, 3),
             currentFirstIndex: 0,
+            currentMiddleIndex: 1,
             currentLastIndex: 2,
             hideLeftArrow: true,
             hideRightArrow: false
@@ -23,19 +24,23 @@ class PhotoCarouselList extends React.Component {
     previousList() {
         this.setState( prevState => ({
             hideLeftArrow: prevState.currentFirstIndex - 1 === 0,
-            currentRecommendations: this.props.recommendations.slice(prevState.currentFirstIndex - 1, prevState.currentLastIndex - 1),
+            currentRecommendations: [this.props.recommendations[prevState.currentFirstIndex-1], this.props.recommendations[prevState.currentMiddleIndex-1], this.props.recommendations[prevState.currentLastIndex-1]],
             currentFirstIndex: prevState.currentFirstIndex - 1,
-            currentLastIndex: prevState.currentLastIndex - 1
+            currentMiddleIndex: prevState.currentMiddleIndex - 1,
+            currentLastIndex: prevState.currentLastIndex - 1,
         }));
+        // currentRecommendations: this.props.recommendations.slice(prevState.currentFirstIndex - 1, prevState.currentLastIndex - 1)
     }
 
     nextList() {
         this.setState( prevState => ({
             hideRightArrow: prevState.currentLastIndex + 1 === prevState.currentRecommendations.length - 1,
-            currentRecommendations: this.props.recommendations.slice(prevState.currentFirstIndex + 1, prevState.currentLastIndex + 1),
+            currentRecommendations: [this.props.recommendations[prevState.currentFirstIndex+1], this.props.recommendations[prevState.currentMiddleIndex+1], this.props.recommendations[prevState.currentLastIndex+1]],
             currentFirstIndex: prevState.currentFirstIndex + 1,
+            currentMiddleIndex: prevState.currentMiddleIndex + 1,
             currentLastIndex: prevState.currentLastIndex + 1
         })); 
+        // currentRecommendations: this.props.recommendations.slice(prevState.currentFirstIndex + 1, prevState.currentLastIndex + 1)
     }
 
     render() {

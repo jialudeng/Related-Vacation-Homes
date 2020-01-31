@@ -53,8 +53,8 @@ class PhotoCarousel extends React.Component {
         const styles = {
             backgroundImage: `url(${this.props.recommendation.images[this.state.currentImageIndex]})`,
             backgroundSize: 'cover',
-            width: "320px",
-            height: "220px",
+            width: "366px",
+            height: "244px",
             position: "relative",
             borderRadius: "5px",
             margin: "10px 10px",
