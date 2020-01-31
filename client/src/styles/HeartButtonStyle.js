@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const HButton = styled.a`
+    display: ${props => props.hideButtons ? "none" : "block"};
     background-color: white;
     position: absolute;
-    width: 11px;
-    height: 17px;
+    width: 8px;
+    height: 16px;
     top: -90px;
     right: 0px;
     border-radius: 50%; 
@@ -15,14 +16,12 @@ export const HButton = styled.a`
         transform: scale(1.1);
         opacity: 1;
     }
-    display: ${props => props.showButtons ? "block" : "none"}
 `;
 
 export const HeartIcon = styled.svg`
     fill: ${props => props.likedStatus ? "red" : "white"};
     stroke: ${props => props.likedStatus ? "none" : "black"};
     stroke-width: 2;
-    position: relative;
     top: 3px;
     width: 15px;
 `;

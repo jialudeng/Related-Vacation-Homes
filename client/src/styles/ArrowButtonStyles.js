@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.a`
+    display: ${props => props.hideButtons ? "none" : "block"};
     float: ${props => props.direction === "left" ? "left" : "right"};
     background-color: white;
     height: 16px;
@@ -8,7 +9,6 @@ export const Button = styled.a`
     border-radius: 50%; 
     padding: 7px 12px;
     margin: 100px 10px;
-    display: ${props => props.showButtons ? "block" : "none"};
     opacity: 0.8;
     transition: transform 300ms ease-in-out;
     &:hover {

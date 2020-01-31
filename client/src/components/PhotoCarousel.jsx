@@ -7,7 +7,7 @@ class PhotoCarousel extends React.Component {
         super(props);
         this.state = {
             currentImageIndex: 0, 
-            showButtons: false,
+            hideButtons: true,
             likedStatus: props.recommendation.likedStatus
         }
         this.previousSlide = this.previousSlide.bind(this);
@@ -45,7 +45,7 @@ class PhotoCarousel extends React.Component {
 
     handleToggleButton() {
         this.setState(prevState => ({
-            showButtons: !prevState.showButtons
+            hideButtons: !prevState.hideButtons
         }));
     }
 
@@ -62,17 +62,17 @@ class PhotoCarousel extends React.Component {
         return (
             <div style={styles} onMouseEnter={this.handleToggleButton} onMouseLeave={this.handleToggleButton}>
                 <HeartButton
-                    showButtons={this.state.showButtons}
+                    hideButtons={this.state.hideButtons}
                     clickFunction={this.handleToggleLike}
                     likedStatus={this.state.likedStatus}
                 />
                 <ArrowButton 
-                    showButtons={this.state.showButtons}
+                    hideButtons={this.state.hideButtons}
                     direction="left"
                     clickFunction={this.previousSlide}
                 />
                 <ArrowButton 
-                    showButtons={this.state.showButtons}
+                    hideButtons={this.state.hideButtons}
                     direction="right"
                     clickFunction={this.nextSlide}
                 />
