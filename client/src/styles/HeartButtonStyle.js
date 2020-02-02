@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const HButton = styled.a`
     display: ${props => props.hideButtons ? "none" : "block"};
-    background-color: white;
+    background-color: rgba(255, 255, 255, 09);
     position: absolute;
+    cursor: pointer;
     width: 8px;
     height: 16px;
     top: -90px;
@@ -21,7 +22,9 @@ export const HButton = styled.a`
 export const HeartIcon = styled.svg`
     fill: ${props => props.likedStatus ? "red" : "white"};
     stroke: ${props => props.likedStatus ? "none" : "black"};
-    stroke-width: 2;
-    top: 3px;
-    width: 15px;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    role: presentation;
+    width: 16px;
 `;

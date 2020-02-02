@@ -40,22 +40,24 @@ const getAllListings = (callback) => {
     })
 }
 
-const getListing = (id, callback) => {
-    Listing.find({listingId: id}, "recommendations", (error, listingObject) => {
-        if (error) {
-            console.log(error);
-            callback(error);
-        } else {
-            console.log(listingObject);
-            callback(null, listingObject);
-        }
-    });
-}
+// getAllListings(()=> {})
+
+// const getListing = (id, callback) => {
+//     Listing.find({listingId: id}, "recommendations", (error, listingObject) => {
+//         if (error) {
+//             console.log(error);
+//             callback(error);
+//         } else {
+//             console.log(listingObject);
+//             callback(null, listingObject);
+//         }
+//     });
+// }
 
 // to test function getListings()
 // getListing(8, () => {})
 
-module.exports = {Listing, getListing, getAllListings};
+module.exports = {Listing, getAllListings};
 
 
 

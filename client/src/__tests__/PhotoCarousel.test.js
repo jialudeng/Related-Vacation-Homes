@@ -25,7 +25,7 @@ describe('Test ArrowButton Component', () => {
     test('should call a function when button is clicked', () => {
         const mockCallBack = jest.fn();
         const button = shallow(<ArrowButton direction="left" clickFunction={mockCallBack} graphic="<" showButtons="true"/>);
-        button.find('Button').stimulate('click');
+        button.find('Button').simulate('click');
         expect(mockCallBack.mock.calls.length).toEqual(1);
     })
 })

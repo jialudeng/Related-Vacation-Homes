@@ -1,25 +1,24 @@
 import React from 'react';
 import axios from 'axios';
 import PhotoCarouselList from './PhotoCarouselList.jsx';
-import {AppContainer, Heading} from '../styles/AppStyles.js';
-import dummyData from '../../dummyData.js';
+import {MainContainer, Heading} from '../styles/AppStyles.js';
+// import dummyData from '../../dummyData.js';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            listings: dummyData, // currently, working off of dummy data already in the client
-            recommendations: dummyData[0].recommendations
+            recommendations: null
         }
     }
     
     // get request for all listings 
     componentDidMount() {
-        axios.get('./listings')
+        axios.get('/listings')
             .then((response) => {
+                console.log(response.data[0]);
                 this.setState({
-                    listings: response.data,
-                    recommendations: response.data[1].recommendations
+                    recommendations: response.data[99].recommendations
                 }) 
             })
             .catch((error) => {
@@ -43,10 +42,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <AppContainer id="main-content">
+            <MainContainer>
                 <Heading> More homes you may like </Heading>
-                <PhotoCarouselList recommendations={this.state.recommendations}/>
-            </AppContainer>
+                {this.state.recommendations ? <PhotoCarouselList recommendations={this.state.recommendations}/>  : ''}
+            </MainContainer>
         )
     }
 }

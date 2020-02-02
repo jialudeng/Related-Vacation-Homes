@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import ArrowButton from './ArrowButton.jsx';
 import HeartButton from './HeartButton.jsx';
 
@@ -37,7 +38,6 @@ class PhotoCarousel extends React.Component {
     }
 
     handleToggleLike() {
-        console.log('heart should change red and border disappear');
         this.setState(prevState => ({
             likedStatus: !prevState.likedStatus
         }));
@@ -62,19 +62,19 @@ class PhotoCarousel extends React.Component {
         return (
             <div style={styles} onMouseEnter={this.handleToggleButton} onMouseLeave={this.handleToggleButton}>
                 <HeartButton
-                    hideButtons={this.state.hideButtons}
                     clickFunction={this.handleToggleLike}
+                    hideButtons={this.state.hideButtons}
                     likedStatus={this.state.likedStatus}
                 />
                 <ArrowButton 
-                    hideButtons={this.state.hideButtons}
                     direction="left"
                     clickFunction={this.previousSlide}
+                    hideButtons={this.state.hideButtons}
                 />
                 <ArrowButton 
-                    hideButtons={this.state.hideButtons}
                     direction="right"
                     clickFunction={this.nextSlide}
+                    hideButtons={this.state.hideButtons}
                 />
             </div>
         )

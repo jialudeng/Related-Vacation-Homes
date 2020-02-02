@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {RecommendationListContainer, RecommendationContainer} from '../styles/PhotoCarouselListStyles.js';
+import {Container, RecommendationListContainer, RecommendationContainer} from '../styles/PhotoCarouselListStyles.js';
 
 import PhotoCarousel from './PhotoCarousel.jsx';
 import ItemInformation from './ItemInformation.jsx';
-import ArrowButton from './ArrowButton.jsx';
+import OuterArrowButton from './OuterArrowButton.jsx';
 
 class PhotoCarouselList extends React.Component {
     constructor(props) {
@@ -24,38 +24,42 @@ class PhotoCarouselList extends React.Component {
     previousList() {
         this.setState( prevState => ({
             hideLeftArrow: prevState.currentFirstIndex - 1 === 0,
+            hideRightArrow: prevState.currentLastIndex + 1 === prevState.currentRecommendations.length - 1,
             currentRecommendations: [this.props.recommendations[prevState.currentFirstIndex-1], this.props.recommendations[prevState.currentMiddleIndex-1], this.props.recommendations[prevState.currentLastIndex-1]],
             currentFirstIndex: prevState.currentFirstIndex - 1,
             currentMiddleIndex: prevState.currentMiddleIndex - 1,
             currentLastIndex: prevState.currentLastIndex - 1,
         }));
-        // currentRecommendations: this.props.recommendations.slice(prevState.currentFirstIndex - 1, prevState.currentLastIndex - 1)
+    
     }
 
     nextList() {
         this.setState( prevState => ({
+            hideLeftArrow: prevState.currentFirstIndex - 1 === 0,
             hideRightArrow: prevState.currentLastIndex + 1 === prevState.currentRecommendations.length - 1,
             currentRecommendations: [this.props.recommendations[prevState.currentFirstIndex+1], this.props.recommendations[prevState.currentMiddleIndex+1], this.props.recommendations[prevState.currentLastIndex+1]],
             currentFirstIndex: prevState.currentFirstIndex + 1,
             currentMiddleIndex: prevState.currentMiddleIndex + 1,
             currentLastIndex: prevState.currentLastIndex + 1
         })); 
-        // currentRecommendations: this.props.recommendations.slice(prevState.currentFirstIndex + 1, prevState.currentLastIndex + 1)
+
     }
 
     render() {
         return (
-            <RecommendationListContainer>
-                <ArrowButton direction="left" clickFunction={this.previousList} hideButtons={this.state.hideLeftArrow}/>
-                {this.state.currentRecommendations.map( (recommendation, i) => 
-                    <RecommendationContainer key={i}>
-                        <PhotoCarousel recommendation={recommendation}/> 
-                        <ItemInformation recommendation={recommendation}/> 
-                    </RecommendationContainer>
-                )}
-                <ArrowButton direction="right" clickFunction={this.nextList} hideButtons={this.state.hideRightArrow}/>
-            </RecommendationListContainer>
-        )
+            <Container>
+                <OuterArrowButton direction="left" clickFunction={this.previousList} hideButtons={this.state.hideLeftArrow}/>
+                <OuterArrowButton direction="right" clickFunction={this.nextList} hideButtons={this.state.hideRightArrow}/>
+                <RecommendationListContainer>
+                    {this.state.currentRecommendations.map( (recommendation, i) => 
+                        <RecommendationContainer key={i}>
+                            <PhotoCarousel recommendation={recommendation}/> 
+                            <ItemInformation recommendation={recommendation}/> 
+                        </RecommendationContainer>
+                    )}
+                </RecommendationListContainer>
+            </Container>
+        );
     }
 }
 

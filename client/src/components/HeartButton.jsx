@@ -4,9 +4,9 @@ import {HButton, HeartIcon} from '../styles/HeartButtonStyle.js';
 const HeartButton = ({clickFunction, hideButtons, likedStatus}) => {
     return (
         <HButton onClick={clickFunction} hideButtons={hideButtons}>
-            <HeartIcon likedStatus={likedStatus} viewBox="0 0 32 29.6">
-                <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-                c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+            <HeartIcon likedStatus={likedStatus} viewBox="0 0 24 24">
+                <path d="m 17.5 2.9 c -2.1 0 -4.1 1.3 -5.4 2.8 c -1.6 -1.6 -3.8 -3.2 -6.2 -2.7 c -1.5 0.2 -2.9 1.2 -3.6 
+                2.6 c -2.3 4.1 1 8.3 3.9 11.1 c 1.4 1.3 2.8 2.5 4.3 3.6 c 0.4 0.3 1.1 0.9 1.6 0.9 s 1.2 -0.6 1.6 -0.9 c 3.2 -2.3 6.6 -5.1 8.2 -8.8 c 1.5 -3.4 0 -8.6 -4.4 -8.6"/>
             </HeartIcon> 
         </HButton>
     )

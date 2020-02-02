@@ -1,18 +1,22 @@
 import styled from 'styled-components';
 
-export const AppContainer = styled.div`
+export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    height: 380px;
+    width: 1260px;
+    margin-left: 50px;
 `;
 
 export const Heading = styled.div`
-    font-size: 22px !important;
-    line-height: 30px !important;
-    letter-spacing: normal !important;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: normal;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    color: #484848 !important;
-    margin-left: 100px;
+    color: #484848;
     display: block;
     font-weight: bold;
+    margin-left: 50px;
 `;
+

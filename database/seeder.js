@@ -17,7 +17,7 @@ for (var i = 0; i < 12; i++) {
     recommendationsArr.push({
         recommendationId: i,
         title: faker.lorem.sentence().slice(0, 30), 
-        pricePerNight: (Math.random() * 500 + 60).toFixed(2),
+        pricePerNight: Math.floor(Math.random() * 500) + 60,
         images: imageUrls.sort(() => 0.5 - Math.random()).slice(0, Math.random() * 5 + 5), // shuffle imageUrls array and then get sub-array of first 5-10 elements after shuffled
         typeOfListing: ['Entire place', 'Private room', 'Shared room'][Math.floor(Math.random() * 3)],
         numOfBeds: Math.floor(Math.random() * 4) + 1,

@@ -15,11 +15,11 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.get('/listings', (req, res) => {
     getAllListings((error, listingsArr) => {
         if (error) {
+            console.log(error);
             res.status(500).end();
-            console.log("error");
         } else {
+            console.log("get request is successful");
             res.status(200).send(listingsArr);
-            console.log("listingsArr", listingsArr)
         }
     })
 })

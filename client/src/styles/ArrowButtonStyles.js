@@ -4,6 +4,7 @@ export const Button = styled.a`
     display: ${props => props.hideButtons ? "none" : "block"};
     float: ${props => props.direction === "left" ? "left" : "right"};
     background-color: white;
+    cursor: pointer;
     height: 16px;
     width: 8px;
     border-radius: 50%; 
@@ -16,24 +17,23 @@ export const Button = styled.a`
       opacity: 1;
     }
 `;
-// opacity: ${props => props.showButtons ? "0.8" : "0"};
-// left: ${props => props.direction === "left" ? "5px" : "315"};
-// right: ${props => props.direction === "left" ? "0px" : "5px"};
 
-export const RightArrowIcon = styled.i`
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
+export const RightArrowSvg = styled.svg`
+    role: presentation; 
+    aria-hidden: true;
+    focusable: false; 
+    height: 10px; 
+    width: 10px; 
+    display: block; 
+    fill: black;
 `;
 
-export const LeftArrowIcon = styled.i`
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
+export const LeftArrowSvg = styled.svg`
+    role: presentation; 
+    aria-hidden: true;
+    focusable: false; 
+    height: 10px; 
+    width: 10px; 
+    display: block; 
+    fill: black;
 `;
