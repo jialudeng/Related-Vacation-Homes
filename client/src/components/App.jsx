@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import PhotoCarouselList from './PhotoCarouselList.jsx';
 import {MainContainer, Heading} from '../styles/AppStyles.js';
-// import dummyData from '../../dummyData.js';
 
 class App extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import ArrowButton from './ArrowButton.jsx';
 import HeartButton from './HeartButton.jsx';
+import DotsList from './DotsList.jsx';
 
 class PhotoCarousel extends React.Component {
     constructor(props) {
@@ -76,6 +76,7 @@ class PhotoCarousel extends React.Component {
                     clickFunction={this.nextSlide}
                     hideButtons={this.state.hideButtons}
                 />
+                <DotsList/>
             </div>
         )
     }

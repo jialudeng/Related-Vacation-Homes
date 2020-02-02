@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {Container, RecommendationListContainer, RecommendationContainer} from '../styles/PhotoCarouselListStyles.js';
-
 import PhotoCarousel from './PhotoCarousel.jsx';
 import ItemInformation from './ItemInformation.jsx';
 import OuterArrowButton from './OuterArrowButton.jsx';
@@ -35,7 +34,7 @@ class PhotoCarouselList extends React.Component {
 
     nextList() {
         this.setState( prevState => ({
-            hideLeftArrow: prevState.currentFirstIndex - 1 === 0,
+            hideLeftArrow: prevState.currentFirstIndex - 1  === 0,
             hideRightArrow: prevState.currentLastIndex + 1 === prevState.currentRecommendations.length - 1,
             currentRecommendations: [this.props.recommendations[prevState.currentFirstIndex+1], this.props.recommendations[prevState.currentMiddleIndex+1], this.props.recommendations[prevState.currentLastIndex+1]],
             currentFirstIndex: prevState.currentFirstIndex + 1,
