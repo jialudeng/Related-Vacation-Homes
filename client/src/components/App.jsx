@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            recommendations: null
+            recommendations: []
         }
     }
     
@@ -17,7 +17,7 @@ class App extends React.Component {
             .then((response) => {
                 console.log(response.data[0]);
                 this.setState({
-                    recommendations: response.data[99].recommendations
+                    recommendations: response.data[10].recommendations
                 }) 
             })
             .catch((error) => {
@@ -43,7 +43,7 @@ class App extends React.Component {
         return (
             <MainContainer>
                 <Heading> More homes you may like </Heading>
-                {this.state.recommendations ? <PhotoCarouselList recommendations={this.state.recommendations}/>  : ''}
+                <PhotoCarouselList recommendations={this.state.recommendations}/>
             </MainContainer>
         )
     }

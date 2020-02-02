@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const OuterButton = styled.a`
-    display: block !important;
+    display: block;
+    visibility: ${props => props.hideButtons ? "hidden" : "visible"};
     float: ${props => props.direction === "left" ? "left" : "right"}; 
     margin: ${props => props.direction === "left" ? "110px 10px" : "110px 0px"};
     cursor: pointer !important;

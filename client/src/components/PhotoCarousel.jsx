@@ -9,7 +9,7 @@ class PhotoCarousel extends React.Component {
         this.state = {
             currentImageIndex: 0, 
             hideButtons: true,
-            likedStatus: props.recommendation.likedStatus
+            likedStatus: props.recommendation.likedStatus,
         }
         this.previousSlide = this.previousSlide.bind(this);
         this.nextSlide = this.nextSlide.bind(this);
@@ -66,6 +66,10 @@ class PhotoCarousel extends React.Component {
                     hideButtons={this.state.hideButtons}
                     likedStatus={this.state.likedStatus}
                 />
+                <DotsList 
+                    currentImageIndex={this.state.currentImageIndex}
+                    imageArrLength={this.props.recommendation.images.length}    
+                />
                 <ArrowButton 
                     direction="left"
                     clickFunction={this.previousSlide}
@@ -76,7 +80,6 @@ class PhotoCarousel extends React.Component {
                     clickFunction={this.nextSlide}
                     hideButtons={this.state.hideButtons}
                 />
-                <DotsList/>
             </div>
         )
     }

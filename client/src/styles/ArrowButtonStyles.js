@@ -11,7 +11,6 @@ export const Button = styled.a`
     padding: 7px 12px;
     margin: 100px 10px;
     opacity: 0.8;
-    transition: transform 300ms ease-in-out;
     &:hover {
       transform: scale(1.1);
       opacity: 1;

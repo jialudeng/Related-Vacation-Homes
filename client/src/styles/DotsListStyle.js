@@ -28,25 +28,27 @@ export const DotsListWrapperDiv = styled.div`
 `;
 
 export const DotsListDiv = styled.div`
-    -webkit-box-pack: center !important;
-    -webkit-box-align: end !important;
-    align-items: flex-end !important;
-    display: flex !important;
-    justify-content: center !important;
-    list-style-type: none !important;
-    margin: 0px !important;
-    padding: 0px !important;
-    transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s !important;
+    -webkit-box-pack: center;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
 `;
+// transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s !important;
 
 export const DotSvg = styled.svg`
-    height: 6px !important;
-    margin-left: 2.5px !important;
-    margin-right: 2.5px !important;
-    min-width: 6px !important;
-    width: 6px !important;
-    opacity: 1 !important;
-    fill: rgb(255, 255, 255) !important;
-    border-radius: 50% !important;
-    transition: opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s !important;
+    height: 6px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    min-width: 6px;
+    width: 6px;
+    fill: ${props => props.dotNum === props.currentImageIndex ? "rgb(255, 255, 255)" : "grey"};
+    opacity: 1;
+    border-radius: 50%;
 `;
+// transition: opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s !important;
+
+// fill: rgb(255, 255, 255) !important;
