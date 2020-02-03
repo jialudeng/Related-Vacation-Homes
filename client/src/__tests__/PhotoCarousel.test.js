@@ -29,16 +29,3 @@ describe('Test ArrowButton Component', () => {
         expect(mockCallBack.mock.calls.length).toEqual(1);
     })
 })
-
-
-// Tests...PhotCarousel 
-// should display first photo when component is rendered
-// should update photo when an arrow button is clicked
-// should show left arrow and right arrow buttons when mouseover image
-// should show second photo when right arrow button is clicked
-// should show last photo when left arrow button is clicked
-// should be able to render all of the photos in the images array
-
-// Tetsing PhotoCarouselList
-// should hide left arrow button when current image index is 0
-// should hide right arrow button when current image index is 

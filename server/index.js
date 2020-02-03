@@ -4,7 +4,7 @@ const path = require('path');
 const {getAllListings} = require('../database/db.js');
 
 const app = express();
-const port = 3003;
+const port = 3002;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
