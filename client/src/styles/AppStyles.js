@@ -18,5 +18,9 @@ export const Heading = styled.div`
     display: block;
     font-weight: bold;
     margin-left: 50px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 `;
 

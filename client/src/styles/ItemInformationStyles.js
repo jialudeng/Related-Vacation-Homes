@@ -7,6 +7,10 @@ export const TextContainer = styled.div`
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: lighter;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 `;
 export const FirstLine = styled.div`
     display: inline-block;

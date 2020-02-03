@@ -15,7 +15,6 @@ class App extends React.Component {
     componentDidMount() {
         axios.get('/listings')
             .then((response) => {
-                console.log(response.data[0]);
                 this.setState({
                     recommendations: response.data[10].recommendations
                 }) 

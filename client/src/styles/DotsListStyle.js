@@ -11,7 +11,6 @@ export const DotsContainerDiv = styled.div`
     min-height: 40px;
     white-space: nowrap;
     padding-bottom: 12px;
-    overflow: hidden;
 `;
 
 export const DotsListDiv = styled.div`
@@ -30,11 +29,11 @@ export const DotSvg = styled.svg`
     min-width: 6px;
     width: 6px;
     fill: ${props => (props.dotNum === 0 && props.currentImageIndex === props.dotNum ||
-                    props.dotNum === 1 && props.currentImageIndex === props.dotNum ||
-                    props.dotNum === 2 && props.currentImageIndex > 1 && props.currentImageIndex < props.dotsLength - 2 || 
-                    props.dotNum === 3 && props.currentImageIndex === props.dotsLength - 2 ||
-                    props.dotNum === 4 && props.currentImageIndex === props.dotsLength - 1)
-                    ? "rgb(255, 255, 255)" : "rgb(192,192,192)"};
+            props.dotNum === 1 && props.currentImageIndex === props.dotNum ||
+            props.dotNum === 2 && props.currentImageIndex > 1 && props.currentImageIndex < props.dotsLength - 2 || 
+            props.dotNum === 3 && props.currentImageIndex === props.dotsLength - 2 ||
+            props.dotNum === 4 && props.currentImageIndex === props.dotsLength - 1)
+            ? "rgb(255, 255, 255)" : "rgb(192,192,192)"};
     opacity: 1;
     border-radius: 50%;
 `;
