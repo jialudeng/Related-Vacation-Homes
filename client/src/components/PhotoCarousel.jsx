@@ -66,10 +66,12 @@ class PhotoCarousel extends React.Component {
                     hideButtons={this.state.hideButtons}
                     likedStatus={this.state.likedStatus}
                 />
+
                 <DotsList 
-                    currentImageIndex={this.state.currentImageIndex}
-                    imageArrLength={this.props.recommendation.images.length}    
+                    images={this.props.recommendation.images}
+                    currentImageIndex={this.state.currentImageIndex}  
                 />
+    
                 <ArrowButton 
                     direction="left"
                     clickFunction={this.previousSlide}

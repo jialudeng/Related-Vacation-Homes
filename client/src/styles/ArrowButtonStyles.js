@@ -21,7 +21,7 @@ export const RightArrowSvg = styled.svg`
     role: presentation; 
     aria-hidden: true;
     focusable: false; 
-    height: 10px; 
+    height: 15px; 
     width: 10px; 
     display: block; 
     fill: black;
@@ -31,7 +31,7 @@ export const LeftArrowSvg = styled.svg`
     role: presentation; 
     aria-hidden: true;
     focusable: false; 
-    height: 10px; 
+    height: 15px; 
     width: 10px; 
     display: block; 
     fill: black;
