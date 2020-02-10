@@ -13,6 +13,8 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // handler for get requests for all listings
 app.get('/listings', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     getAllListings((error, listingsArr) => {
         if (error) {
             console.log(error);

@@ -16,7 +16,7 @@ class App extends React.Component {
         axios.get('/listings')
             .then((response) => {
                 this.setState({
-                    recommendations: response.data[10].recommendations
+                    recommendations: response.data[1].recommendations
                 }) 
             })
             .catch((error) => {
@@ -25,8 +25,8 @@ class App extends React.Component {
     }
 
     // send a get request for a specific listing so when type localhost:3003/listing/1, send a get request for the listing with listingId of 1 
-    // componentDidMount() {
-    //     axios.get('./listings/:listingId')
+    // getListingById () {
+    //     axios.get('http://localhost:3002/listings/:listingId')
     //         .then((response) => {
     //             let listingObject = response.data
     //             this.setState({

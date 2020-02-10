@@ -11,10 +11,12 @@ class PhotoCarouselList extends React.Component {
             currentFirstIndex: 0,
             currentLastIndex: 2,
             hideLeftArrow: true,
-            hideRightArrow: false
+            hideRightArrow: false,
+            // showingModal: false
         }
         this.previousList = this.previousList.bind(this);
         this.nextList = this.nextList.bind(this);
+        // this.handleToggleModal = this.handleToggleModal.bind(this);
     }
 
     previousList() {
@@ -37,8 +39,13 @@ class PhotoCarouselList extends React.Component {
                 hideRightArrow: prevState.currentLastIndex + 1 === this.props.recommendations.length-1,
             })); 
         }
-
     }
+
+    // handleToggleModal() {
+    //     this.setState(prevState => ({
+    //             showingModal: !prevState.showingModal
+    //     }));
+    // }
 
     render() {
         const currentRecommendations = this.props.recommendations.slice(this.state.currentFirstIndex, this.state.currentLastIndex+1);
@@ -49,7 +56,7 @@ class PhotoCarouselList extends React.Component {
                 <RecommendationListContainer>
                     {currentRecommendations.map( (recommendation, i) => 
                         <RecommendationContainer key={i}>
-                            <PhotoCarousel recommendation={recommendation}/> 
+                            <PhotoCarousel recommendation={recommendation} handleToggleModal={this.handleToggleModal}/> 
                             <ItemInformation recommendation={recommendation}/> 
                         </RecommendationContainer>
                     )}

@@ -1,7 +1,9 @@
 import React from 'react';
+// import Modal from './Modal.jsx';
 import ArrowButton from './ArrowButton.jsx';
 import HeartButton from './HeartButton.jsx';
 import DotsList from './DotsList.jsx';
+
 
 class PhotoCarousel extends React.Component {
     constructor(props) {
@@ -61,7 +63,9 @@ class PhotoCarousel extends React.Component {
         }
         return (
             <div style={styles} onMouseEnter={this.handleToggleButton} onMouseLeave={this.handleToggleButton}>
+
                 <HeartButton
+                    // clickFunction={this.props.handleToggleModal}
                     clickFunction={this.handleToggleLike}
                     hideButtons={this.state.hideButtons}
                     likedStatus={this.state.likedStatus}
@@ -82,6 +86,11 @@ class PhotoCarousel extends React.Component {
                     clickFunction={this.nextSlide}
                     hideButtons={this.state.hideButtons}
                 />
+
+                {/*<Modal 
+                    showingModal={this.props.showingModal} 
+                    handleToggleModal={this.props.handleToggleModal}
+                />*/}
             </div>
         )
     }
