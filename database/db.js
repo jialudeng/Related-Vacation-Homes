@@ -34,7 +34,6 @@ const getAllListings = (callback) => {
             console.log(error);
             callback(error);
         } else {
-            console.log(listingsArr);
             callback(null, listingsArr);
         }
     })
