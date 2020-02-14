@@ -1,6 +1,3 @@
-# recommendations
-recommendations
-
 ## CRUD  API Routes 
 
 GET /api/listings/:id -get recommendations for specified listing
