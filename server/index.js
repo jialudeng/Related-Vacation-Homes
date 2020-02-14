@@ -23,7 +23,7 @@ app.post('/api/listings/data', (req, res) => {
       res.send(response);
     }
   });
-});
+});1
 
 app.get('/api/listings/data/:id', (req, res) => {
   const { id } = req.params;

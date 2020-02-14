@@ -9,7 +9,8 @@
     "test:coverage": "jest --coverage --colors",
     "react-dev": "webpack -p",
     "start": "nodemon server/index.js",
-    "seed": "node database/seedDB.js"
+    "seed": "node database/seedDB.js",
+    "pg": "nodemon pgServer/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "lodash": "^4.17.15",
     "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
+    "pg": "^7.18.1",
     "react": "^16.12.0",
     "react-dev": "0.0.1",
     "react-dom": "^16.12.0",
