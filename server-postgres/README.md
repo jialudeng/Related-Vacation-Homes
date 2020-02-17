@@ -1,49 +1,43 @@
 ## CRUD  API Routes 
 
 GET /api/listings/:id -get recommendations for specified listing
+```js
   request.body = null
-  return [{
-  id int NOT NULL AUTO_INCREMENT,
-  pictureone varchar(255) NOT NULL,
-  picturetwo varchar(255) NOT NULL,
-  picturethree varchar(255) NOT NULL,
-  picturefour varchar(255) NOT NULL,
-  picturefive varchar(255) NOT NULL,
-  category varchar(255) NOT NULL,
-  beds int(20) NOT NULL,
-  title varchar(50) NOT NULL,
-  price int(50000) NOT NULL,
-  reviewscore int(5) NOT NULL,
-  reviewcount int(1000) NOT NULL,
-  PRIMARY KEY (id)
+  response = [{
+  id int,
+  pictures: [{url: string}]
+  type string,
+  beds int,
+  title string,
+  price int,
+  score int,
+  reviews int,
   }]
+```
 
 POST /api/listings -insert new listing
+```js
   request.body = {
-  id int NOT NULL AUTO_INCREMENT,
-  pictureone varchar(255) NOT NULL,
-  picturetwo varchar(255) NOT NULL,
-  picturethree varchar(255) NOT NULL,
-  picturefour varchar(255) NOT NULL,
-  picturefive varchar(255) NOT NULL,
-  category varchar(255) NOT NULL,
-  beds int(20) NOT NULL,
-  title varchar(50) NOT NULL,
-  price int(50000) NOT NULL,
-  reviewscore int(5) NOT NULL,
-  reviewcount int(1000) NOT NULL,
-  PRIMARY KEY (id)
+  pictures: [{url: string}]
+  type string,
+  beds int,
+  title string,
+  price int,
   }
-  return status code
+  response = status code
+```
 
 
-DELETE /api/listings/data/:id -delete recommendations at specified listing
-  request.body = {id int NOT NULL AUTO_INCREMENT}
-  return status code
+DELETE /api/listings/:id -delete recommendations at specified listing
+```js
+  request.body = null
+  response = status code
+```
 
-PUT /api/listings -update a specific listing
+PATCH /api/listings:id -update a specific listing
+```js
   request.body = {
-    id int NOT NULL AUTO_INCREMENT
-    (col) (value)
+    (property): (value)
   }
-  return status code
+  response = status code
+```
