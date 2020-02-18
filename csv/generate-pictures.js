@@ -14,11 +14,11 @@ function writeFiftyMillionTimes(writer, encoding, callback) {
         writer.write(data, encoding);
       } else if (i === 0) {
         let random = Math.random();
-        let data = `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo${Math.floor(random * 40)},${Math.floor(random * 10000001)}\n`;
+        let data = `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo${Math.floor(random * 40)},${Math.ceil(random * 10000000)}\n`;
         ok = writer.write(data, encoding, callback);
       } else {
         let random = Math.random();
-        let data = `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo${Math.floor(random * 40)},${Math.floor(random * 10000001)}\n`;
+        let data = `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo${Math.floor(random * 40)},${Math.ceil(random * 10000000)}\n`;
         ok = writer.write(data, encoding);
       }
     } while (i > 0 && ok);

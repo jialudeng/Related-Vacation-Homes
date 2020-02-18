@@ -11,10 +11,10 @@ function writeTwelveMillionTimes(writer, encoding, callback) {
         let data = 'listingone,listingtwo,similarity\n';
         writer.write(data, encoding);
       } else if (i === 0) {
-        let data = `${Math.ceil(i / 12)},${Math.floor(Math.random() * 10000001)},${Math.floor(Math.random() * 101)}`;
+        let data = `${10000000},${Math.ceil(Math.random() * 10000000)},${Math.ceil(Math.random() * 100)}\n`;
         ok = writer.write(data, encoding, callback);
       } else {
-        let data = `${Math.ceil(i / 12)},${Math.floor(Math.random() * 10000001)},${Math.floor(Math.random() * 101)}`;
+        let data = `${Math.ceil(i / 12)},${Math.ceil(Math.random() * 10000000)},${Math.ceil(Math.random() * 100)}\n`;
         ok = writer.write(data, encoding);
       }
     } while (i > 0 && ok);
