@@ -1,5 +1,4 @@
 const Pool = require('pg').Pool;
-const path = require('path');
 
 const pool = new Pool({
   user: 'me',
@@ -9,40 +8,40 @@ const pool = new Pool({
   port: 5432,
 });
 
-const seedDatabase = (req, res) => {
-  const filepath = path.join(__dirname, 'listings.csv');
-  pool.query(`COPY LISTINGS(category,beds,title,price,score,reviews,city,state,country) FROM '${filepath}' DELIMITER ',' CSV HEADER`, (error, results) => {
-    if (error) {
-      throw error
-    }
-    res.status(201)
-  })
-};
-
-const getListing = (req, res) => {
-  pool.query('SELECT * FROM listings ORDER BY id ASC', (error, results) => {
-    if (error) {
-      throw error
-    }
-    res.status(200).json(results.rows)
-  })
-};
-
 const getListingById = (req, res) => {
-  const id = parseInt(req.params.id)
-
-  pool.query('SELECT * FROM listings WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      throw error
+  (async() => {
+    const id = parseInt(req.params.id)
+    const client = await pool.connect();
+    try {
+      const listings = await client.query('SELECT * FROM listings WHERE id=$1', [id]);
+      const urls = await client.query('SELECT p.url FROM pictures p WHERE p.listing=$1', [id]);
+      const relations = await client.query('SELECT r.listingtwo, r.similarity FROM relations r WHERE r.listingone=$1', [id]);
+      const result = await (() => {
+        let listing = listings.rows[0];
+        listing.pics = [];
+        listing.relations = [];
+        urls.rows.forEach((obj) => {
+          listing.pics.push(obj.url);
+        })
+        relations.rows.forEach((obj) => {
+          let temp = {[obj.listingtwo]: obj.similarity};
+          listing.relations.push(temp);
+        })
+        return new Promise(resolve => {
+          resolve(listing);
+        });
+      })();
+      res.send(result);
+    } finally {
+      client.release()
     }
-    res.status(200).json(results.rows)
-  })
+  })().catch(err => console.log(err.stack))
 };
 
 const createListing = (req, res) => {
   const { category, beds, title, price, score, reviews, city, state, country } = req.body
 
-  pool.query('INSERT INTO listings (category, beds, title, price, score, reviews, city, state, country) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id', [category, beds, title, price, score, reviews, city, state, country], (error, results) => {
+  pool.query('INSERT INTO listings (id, category, beds, title, price, score, reviews, city, state, country) VALUES (default, $1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id', [category, beds, title, price, score, reviews, city, state, country], (error, results) => {
     if (error) {
       throw error
     }
@@ -50,18 +49,45 @@ const createListing = (req, res) => {
   })
 };
 
+const addPicture = (req, res) => {
+  const { url, listing } = req.body;
+
+  pool.query('INSERT INTO pictures (id, url, listing) VALUES (default, $1, $2) RETURNING id', [url, listing], (error, results) => {
+    if (error) {
+      throw error
+    }
+    res.status(201).send(`User added with ID: ${results.rows[0].id}`)
+  })
+};
+
 const updateListing = (req, res) => {
   const id = parseInt(req.params.id)
-  const { name, email } = req.body
+  const { category, beds, title, price, score, reviews, city, state, country } = req.body
 
   pool.query(
-    'UPDATE users SET name = $1, email = $2 WHERE id = $3',
-    [name, email, id],
+    'UPDATE listings SET category = $1, beds = $2, title = $3, price = $4, score = $5, reviews = $6, city = $7, state = $8, country = $9 WHERE id = $10',
+    [category, beds, title, price, score, reviews, city, state, country, id],
     (error, results) => {
       if (error) {
         throw error
       }
-      res.status(200).send(`User modified with ID: ${id}`)
+      res.status(200).send(`Listing modified with ID: ${id}`)
+    }
+  )
+}
+
+const updatePicture = (req, res) => {
+  const id = parseInt(req.params.id)
+  const { url } = req.body
+
+  pool.query(
+    'UPDATE pictures SET url=$1 WHERE id=$2',
+    [url, id],
+    (error, results) => {
+      if (error) {
+        throw error
+      }
+      res.status(200).send(`Picture modified with ID: ${id}`)
     }
   )
 }
@@ -69,19 +95,31 @@ const updateListing = (req, res) => {
 const deleteListing = (req, res) => {
   const id = parseInt(req.params.id)
 
-  pool.query('DELETE FROM users WHERE id = $1', [id], (error, results) => {
+  pool.query('DELETE FROM listings WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }
-    res.status(200).send(`User deleted with ID: ${id}`)
+    res.status(200).send(`Listing deleted with ID: ${id}`)
   })
 };
 
+const deletePicture = (req, res) => {
+  const id = parseInt(req.params.id)
+
+  pool.query('DELETE FROM pictures WHERE id = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).send(`Picture deleted with ID: ${id}`)
+  })
+}
+
 module.exports = {
-  seedDatabase,
-  getListing,
   getListingById,
   createListing,
+  addPicture,
   updateListing,
+  updatePicture,
   deleteListing,
+  deletePicture
 };

@@ -4,6 +4,7 @@ package-lock.json
 config.js
 listings.csv
 pictures.csv
-airbnb.csv
 relations.csv
 .DS_Store
+newrelic.js
+newrelic_agent.log

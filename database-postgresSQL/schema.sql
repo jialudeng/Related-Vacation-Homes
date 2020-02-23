@@ -53,3 +53,20 @@ CREATE TABLE relations (
   similarity integer
 );
 
+select * from relations where listingone = 9482;
+update relations set similarity = 99 where listingone = 9482 and listingtwo = 3989786;
+delete from relations where listingone = 9482 and listingtwo = 3989786;
+insert into relations (listingone,listingtwo,similarity) values (29401,3,90)
+
+
+insert into pictures (id,url,listing) values (default,'testing',2387510);
+update pictures set url = 'testing' where id = 23857143;
+delete from pictures where listing = 6274914;
+
+CREATE INDEX idx_pictures_listing
+ON pictures(listing);
+
+CREATE INDEX idx_relations_listingone
+ON relations(listingone);
+
+

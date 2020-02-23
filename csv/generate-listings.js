@@ -13,13 +13,13 @@ function writeTenMillionTimes(writer, encoding, callback) {
     do {
       i--;
       if (i === 10000000) {
-        let data = 'category,beds,title,price,score,reviews,city,state,country\n';
+        let data = 'id,category,beds,title,price,score,reviews,city,state,country\n';
         writer.write(data, encoding);
       } else if (i === 0) {
-        let data = `${categories[Math.floor(Math.random() * 11)]},${Math.floor(Math.random() * 21)},${lorem.words()},${Math.floor(commerce.price())},${(Math.random() * 2 + 3).toFixed(2)},${Math.floor(random.number() / 100)},${address.city()},${address.state()},United States\n`;
+        let data = `${i + 1},${categories[Math.floor(Math.random() * 11)]},${Math.floor(Math.random() * 21)},${lorem.words()},${Math.floor(commerce.price())},${(Math.random() * 2 + 3).toFixed(2)},${Math.floor(random.number() / 100)},${address.city()},${address.state()},United States\n`;
         ok = writer.write(data, encoding, callback);
       } else {
-        let data = `${categories[Math.floor(Math.random() * 11)]},${Math.floor(Math.random() * 21)},${lorem.words()},${Math.floor(commerce.price())},${(Math.random() * 2 + 3).toFixed(2)},${Math.floor(random.number() / 100)},${address.city()},${address.state()},United States\n`;
+        let data = `${i + 1},${categories[Math.floor(Math.random() * 11)]},${Math.floor(Math.random() * 21)},${lorem.words()},${Math.floor(commerce.price())},${(Math.random() * 2 + 3).toFixed(2)},${Math.floor(random.number() / 100)},${address.city()},${address.state()},United States\n`;
         ok = writer.write(data, encoding);
       }
     } while (i > 0 && ok);
