@@ -1,41 +1,34 @@
 const Pool = require('pg').Pool;
 
 const pool = new Pool({
-  user: 'me',
+  user: 'jialudeng',
   host: 'localhost',
   database: 'airbnb',
   password: 'password',
   port: 5432,
 });
 
-const getListingById = (req, res) => {
-  (async() => {
-    const id = parseInt(req.params.id)
-    const client = await pool.connect();
-    try {
-      const listings = await client.query('SELECT * FROM listings WHERE id=$1', [id]);
-      const urls = await client.query('SELECT p.url FROM pictures p WHERE p.listing=$1', [id]);
-      const relations = await client.query('SELECT r.listingtwo, r.similarity FROM relations r WHERE r.listingone=$1', [id]);
-      const result = await (() => {
-        let listing = listings.rows[0];
-        listing.pics = [];
-        listing.relations = [];
-        urls.rows.forEach((obj) => {
-          listing.pics.push(obj.url);
-        })
-        relations.rows.forEach((obj) => {
-          let temp = {[obj.listingtwo]: obj.similarity};
-          listing.relations.push(temp);
-        })
-        return new Promise(resolve => {
-          resolve(listing);
-        });
-      })();
-      res.send(result);
-    } finally {
-      client.release()
-    }
-  })().catch(err => console.log(err.stack))
+const getListingById = async function (req, res) {
+  try {
+    const id = parseInt(req.params.id);
+    let results = await Promise.all([pool.query('SELECT * FROM listings WHERE id=$1', [id]), pool.query('SELECT p.url FROM pictures p WHERE p.listing=$1', [id]), pool.query('SELECT r.listingtwo, r.similarity FROM relations r WHERE r.listingone=$1', [id])]);
+    const result = await (() => {
+      let listing = results[0].rows[0];
+      listing.pics = [];
+      listing.relations = [];
+      results[1].rows.forEach((obj) => {
+        listing.pics.push(obj.url);
+      })
+      results[2].rows.forEach((obj) => {
+        let temp = {[obj.listingtwo]: obj.similarity};
+        listing.relations.push(temp);
+      })
+      return listing;
+    })();
+    await res.send(result);
+  } catch (err) {
+    console.log(err)
+  }
 };
 
 const createListing = (req, res) => {

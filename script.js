@@ -12,5 +12,5 @@ export default function() {
     "status was 200": (r) => r.status == 200,
     "transaction time OK": (r) => r.timings.duration < 2000
   });
-  sleep(0.01);
+  sleep(0.1);
 };
