@@ -1,13 +1,13 @@
 const { createWriteStream } = require('fs');
 
 function writeTwelveMillionTimes(writer, encoding, callback) {
-  let i = 120000001;
+  let i = 12000001;
   write();
   function write() {
     let ok = true;
     do {
       i--;
-      if (i === 120000000) {
+      if (i === 12000000) {
         let data = 'listingone,listingtwo,similarity\n';
         writer.write(data, encoding);
       } else if (i === 0) {
@@ -24,7 +24,7 @@ function writeTwelveMillionTimes(writer, encoding, callback) {
   }
 }
  
-let writeStream = createWriteStream('./relations.csv');
+let writeStream = createWriteStream('./relations10.csv');
 
 writeTwelveMillionTimes(writeStream, 'utf8', () => {writeStream.end()})
  

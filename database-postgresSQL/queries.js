@@ -1,34 +1,36 @@
 const Pool = require('pg').Pool;
 
 const pool = new Pool({
-  user: 'jialudeng',
-  host: 'localhost',
+  user: 'postgres',
+  host: '54.67.21.61',
   database: 'airbnb',
   password: 'password',
   port: 5432,
 });
 
-const getListingById = async function (req, res) {
-  try {
+const getListingById = function (req, res) {
+  ;(async () => {
     const id = parseInt(req.params.id);
-    let results = await Promise.all([pool.query('SELECT * FROM listings WHERE id=$1', [id]), pool.query('SELECT p.url FROM pictures p WHERE p.listing=$1', [id]), pool.query('SELECT r.listingtwo, r.similarity FROM relations r WHERE r.listingone=$1', [id])]);
-    const result = await (() => {
-      let listing = results[0].rows[0];
-      listing.pics = [];
-      listing.relations = [];
-      results[1].rows.forEach((obj) => {
-        listing.pics.push(obj.url);
-      })
-      results[2].rows.forEach((obj) => {
-        let temp = {[obj.listingtwo]: obj.similarity};
-        listing.relations.push(temp);
-      })
-      return listing;
-    })();
-    await res.send(result);
-  } catch (err) {
-    console.log(err)
-  }
+    const client = await pool.connect()
+    try {
+      const results = await client.query('select distinct r.listingtwo, r.similarity, p.url, l.category, l.beds, l.title, l. price, l.score, l.reviews, l.city, l.state, l.country from relations r inner join pictures p on p.listing=r.listingtwo inner join listings l on l.id=r.listingtwo where r.listingone=$1', [id])
+      res.send(results.rows)
+    } finally {
+      client.release()
+    }
+  })().catch(err => console.log(err.stack))
+
+
+
+
+
+  
+  // pool.query('select distinct r.listingtwo, r.similarity, p.url, l.category, l.beds, l.title, l. price, l.score, l.reviews, l.city, l.state, l.country from relations r inner join pictures p on p.listing=r.listingtwo inner join listings l on l.id=r.listingtwo where r.listingone=$1', [id], (error, results) => {
+  //   if (error) {
+  //     throw error
+  //   }
+  //   res.send(results.rows)
+  // });
 };
 
 const createListing = (req, res) => {

@@ -1,7 +1,7 @@
 const { createWriteStream } = require('fs');
 const { lorem, commerce, random, address } = require('faker');
 
-let writeStream = createWriteStream('./listings.csv');
+let writeStream = createWriteStream('./listings5.csv');
 
 const categories = ['Entire guesthouse', 'Entire house', 'Entire apartment', 'Entire cabin', 'Entire guest suite', 'Entire cottage', 'Entire villa', 'Entire bungalow', 'Private room', 'Entire loft', 'Shared room'];
 

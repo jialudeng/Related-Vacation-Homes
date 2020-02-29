@@ -1,0 +1,10 @@
+node_modules
+bundle.js
+package-lock.json
+config.js
+csv
+.DS_Store
+database-mongo
+database-neo4j
+server-mongo
+server-neo4j

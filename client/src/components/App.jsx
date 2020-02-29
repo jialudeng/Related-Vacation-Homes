@@ -13,7 +13,7 @@ class App extends React.Component {
     
     // get request for all listings 
     componentDidMount() {
-        axios.get('/listings')
+        axios.get('/api/listings/1')
             .then((response) => {
                 this.setState({
                     recommendations: response.data[1].recommendations

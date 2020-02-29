@@ -3,19 +3,6 @@ CREATE DATABASE airbnb;
 
 \c airbnb;
 
-CREATE TABLE listings_staging (
-  id SERIAL PRIMARY KEY,
-  category varchar(100) NOT NULL,
-  beds varchar(100) NOT NULL,
-  title varchar(100) NOT NULL,
-  price varchar(100) NOT NULL,
-  score varchar(100) NOT NULL,
-  reviews varchar(100) NOT NULL,
-  city varchar(100) NOT NULL,
-  state varchar(100) NOT NULL,
-  country varchar(100) NOT NULL
-);
-
 CREATE TABLE listings (
   id SERIAL PRIMARY KEY,
   category varchar(100) NOT NULL,
@@ -29,11 +16,18 @@ CREATE TABLE listings (
   country char(100) NOT NULL
 );
 
-CREATE TABLE pictures_staging (
+CREATE TABLE pictures (
   id SERIAL PRIMARY KEY,
   url varchar(100) NOT NULL,
-  listing varchar(100) NOT NULL
+  listing integer
 );
+
+ALTER TABLE pictures
+ADD CONSTRAINT picture_listing_id
+FOREIGN KEY (listing)
+REFERENCES listings(id)
+ON DELETE CASCADE;
+
 
 CREATE TABLE pictures (
   id SERIAL PRIMARY KEY,
@@ -41,17 +35,34 @@ CREATE TABLE pictures (
   listing integer REFERENCES listings(id) ON DELETE CASCADE
 );
 
-CREATE TABLE relations_staging (
-  listingone varchar(100) NOT NULL,
-  listingtwo varchar(100) NOT NULL,
-  similarity varchar(100) NOT NULL
+CREATE TABLE relations (
+  listingone integer NOT NULL, 
+  listingtwo integer NOT NULL, 
+  similarity integer
 );
+
+ALTER TABLE relations
+ADD CONSTRAINT relationone_listing_id
+FOREIGN KEY (listingone)
+REFERENCES listings(id)
+ON DELETE CASCADE;
+
+ALTER TABLE relations
+ADD CONSTRAINT relationtwo_listing_id
+FOREIGN KEY (listingtwo)
+REFERENCES listings(id)
+ON DELETE CASCADE;
 
 CREATE TABLE relations (
   listingone integer NOT NULL REFERENCES listings(id) ON DELETE CASCADE,
   listingtwo integer NOT NULL REFERENCES listings(id) ON DELETE CASCADE,
   similarity integer
 );
+
+COPY listings(category,beds,title,price,score,reviews,city,state,country) FROM '/home/ec2-user/listings5.csv' CSV HEADER;
+
+
+
 
 select * from relations where listingone = 9482;
 update relations set similarity = 99 where listingone = 9482 and listingtwo = 3989786;
@@ -63,10 +74,10 @@ insert into pictures (id,url,listing) values (default,'testing',2387510);
 update pictures set url = 'testing' where id = 23857143;
 delete from pictures where listing = 6274914;
 
-CREATE INDEX idx_pictures_listing
-ON pictures(listing);
+CREATE INDEX hash_pictures_listing
+ON pictures USING HASH (listing);
 
-CREATE INDEX idx_relations_listingone
-ON relations(listingone);
+CREATE INDEX hash_relations_listingone
+ON relations USING HASH (listingone);
 
 
