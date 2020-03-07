@@ -1,6 +1,9 @@
 {
   "name": "recommendations",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.16.1"
+  },
   "description": "",
   "main": "server-postgres/index.js",
   "scripts": {
@@ -8,9 +11,9 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "react-dev": "webpack -p",
-    "start": "node server/index.js",
+    "start": "pm2 start ecosystem.config.js --env production",
     "seed-mongo": "node database-mongo/seedDB.js",
-    "start-pg": "nodemon server-pg/index.js",
+    "start-pg": "NODE_ENV=production node server-postgres/index.js",
     "start-neo4j": "nodemon server-neo4j/index.js"
   },
   "repository": {
@@ -35,6 +38,7 @@
     "neo4j-driver": "^4.0.1",
     "newrelic": "^6.4.1",
     "pg": "^7.18.1",
+    "pm2": "^4.2.3",
     "react": "^16.12.0",
     "react-dev": "0.0.1",
     "react-dom": "^16.12.0",

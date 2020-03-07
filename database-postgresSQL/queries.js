@@ -2,35 +2,23 @@ const Pool = require('pg').Pool;
 
 const pool = new Pool({
   user: 'postgres',
-  host: '54.67.21.61',
+  host: '54.219.178.138',
   database: 'airbnb',
   password: 'password',
   port: 5432,
+  max: 150,
 });
 
-const getListingById = function (req, res) {
-  ;(async () => {
-    const id = parseInt(req.params.id);
-    const client = await pool.connect()
-    try {
-      const results = await client.query('select distinct r.listingtwo, r.similarity, p.url, l.category, l.beds, l.title, l. price, l.score, l.reviews, l.city, l.state, l.country from relations r inner join pictures p on p.listing=r.listingtwo inner join listings l on l.id=r.listingtwo where r.listingone=$1', [id])
-      res.send(results.rows)
-    } finally {
-      client.release()
-    }
-  })().catch(err => console.log(err.stack))
-
-
-
-
-
+const getListingById =  function (req, res) {
+  const id = parseInt(req.params.id);
   
-  // pool.query('select distinct r.listingtwo, r.similarity, p.url, l.category, l.beds, l.title, l. price, l.score, l.reviews, l.city, l.state, l.country from relations r inner join pictures p on p.listing=r.listingtwo inner join listings l on l.id=r.listingtwo where r.listingone=$1', [id], (error, results) => {
-  //   if (error) {
-  //     throw error
-  //   }
-  //   res.send(results.rows)
-  // });
+  pool.query('select distinct r.listingtwo, r.similarity, p.url, l.category, l.beds, l.title, l. price, l.score, l.reviews, l.city, l.state, l.country from relations r inner join pictures p on p.listing=r.listingtwo inner join listings l on l.id=r.listingtwo where r.listingone=$1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    res.send(results.rows)
+  })
+
 };
 
 const createListing = (req, res) => {
@@ -117,4 +105,4 @@ module.exports = {
   updatePicture,
   deleteListing,
   deletePicture
-};
+}
